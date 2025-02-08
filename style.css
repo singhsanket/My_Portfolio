@@ -1,0 +1,633 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.banner{
+    position: relative;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px;
+    background: #fff;
+    transition: 0.5s;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 20px 100px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+header .logo{
+    color: #333;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 700;
+    transition: 0.5s;
+}
+header .logo span{
+    color: orange;
+    font-size: 2em;
+}
+header ul{
+    display: flex;
+    gap: 40px;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: #333;
+    transition: 0.5s;
+}
+.content{
+    position: relative;
+    max-width: 700px;
+}
+
+.content h2{
+    font-size: 5.5em;
+    padding: 10px;
+    color: #333;
+    transition: 0.5s;
+    width: 80rem;
+    
+}
+.content h2 span{
+    color: orange;
+     
+    
+}
+.content p{
+    font-size: 1.2em;
+    color: #666;
+    margin: 10px 0;
+    transition: 0.5s;
+}
+.content button{
+    position: relative;
+    background: orange;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 15px 35px;
+    font-size: 1.25em;
+    letter-spacing: 0.05em;
+    margin-right: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: 600;
+}
+.content button.chat{
+    background: transparent;
+    color: #333;
+}
+.dayNight{
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 2em;
+
+}
+.dayNight ion-icon:nth-child(2), .banner.night .dayNight ion-icon:nth-child(1){
+    display: none;
+}
+.banner.night .dayNight ion-icon:nth-child(2){
+    display: block;
+}
+.banner.night{
+    background: #333333;
+}
+.banner.night .dayNight{
+    color: #fff;
+    background:#4c4c4c;
+}
+
+.banner.night header .logo,
+.banner.night .content h2,
+.banner.night .content p,
+.banner.night .content button.chat,
+.banner.night header ul li a{
+    color: #fff;
+}
+
+/* Container for all cards */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Flexible grid columns */
+    gap: 30px; /* Space between cards */
+    padding: 20px;
+    justify-items: center; /* Center items in the grid */
+  }
+  
+  /* General Card Style */
+  .card, .card_t, .card_TH, .card_F {
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    transition: transform 0.3s ease-in-out; /* Hover effect */
+  }
+  
+  .card:hover, .card_t:hover, .card_TH:hover, .card_F:hover {
+    transform: scale(1.05); /* Card zoom effect on hover */
+  }
+  
+  /* Card Image Style */
+  .card .image, .card_t .image, .card_TH .image, .card_F .image {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .card .image img, .card_t .image img, .card_TH .image img, .card_F .image img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  /* Card Title Style */
+  .card .title, .card_t .title, .card_TH .title, .card_F .title {
+    padding: 15px;
+    background-color: #f5f5f5;
+  }
+  
+  .card .title h4, .card_t .title h4, .card_TH .title h4, .card_F .title h4 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Card Description Style */
+  .card .desc, .card_t .desc, .card_TH .desc, .card_F .desc {
+    padding: 15px;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+  }
+  
+  /* Card Button Link Style */
+  .card .link, .card_t .link, .card_TH .link, .card_F .link {
+    padding: 15px;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+  
+  .card .link a button, .card_t .link a button, .card_TH .link a button, .card_F .link a button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button Specific Colors for Different Cards */
+  .card .link a button {
+    background-color: #0077B5; /* LinkedIn Blue */
+  }
+  
+  .card_t .link a button {
+    background-color: #4285F4; /* Gmail Blue */
+  }
+  
+  .card_TH .link a button {
+    background-color: #1877F2; /* Facebook Blue */
+  }
+  
+  .card_F .link a button {
+    background-color: #E4405F; /* Instagram Pink */
+  }
+  
+  /* Button Hover Effects */
+  .card .link a button:hover {
+    background-color: #005F89; /* Darker LinkedIn blue */
+  }
+  
+  .card_t .link a button:hover {
+    background-color: #3367d6; /* Darker Gmail blue */
+  }
+  
+  .card_TH .link a button:hover {
+    background-color: #155C9D; /* Darker Facebook blue */
+  }
+  
+  .card_F .link a button:hover {
+    background-color: #C13584; /* Darker Instagram pink */
+  }
+
+  /* Container for the text content */
+.text {
+    background-color: #2c3e50; /* Dark background for contrast */
+    color: white; /* White text color */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 40px auto; /* Centers the content */
+  }
+  
+  .text p {
+    font-size: 18px;
+    text-align: justify; /* Justified text for neatness */
+  }
+  
+  /* Button Styling */
+  .btn {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .btn button {
+    background-color: #3498db; /* Bright blue color */
+    color: white; /* White text on button */
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Hover effects for the button */
+  .btn button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.1); /* Button grows slightly on hover */
+  }
+  
+  /* Optional: Smooth transition for the text block */
+  .text {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .text:hover {
+    transform: scale(1.02); /* Slightly zoom the text block on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  }
+
+/* Header Section */
+.abtext {
+    margin-bottom: 40px;
+}
+
+.abtext p {
+    font-size: 18px;
+    color: #b0bec5;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.abtext p strong {
+    color: #5c6bc0;
+}
+
+/* Skills Section */
+.skills {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skills h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #5c6bc0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.lit {
+    list-style-type: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.lit li {
+    font-size: 18px;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    color: #b0bec5;
+}
+
+.lit li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #5c6bc0;
+}
+
+.lit li:hover {
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Projects Section */
+.cotain {
+    margin-top: 50px;
+}
+
+.cotain h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #5c6bc0;
+    margin-bottom: 20px;
+}
+
+.pro {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pro h3 {
+    font-size: 24px;
+    color: #5c6bc0;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.pro p {
+    font-size: 18px;
+    color: #b0bec5;
+    line-height: 1.7;
+}
+
+/* Bold text in project description */
+.pro p bold {
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Back Button */
+.Contact {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 2%;
+}
+
+.Contact .back {
+    padding: 12px 30px;
+    background-color: #5c6bc0;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.Contact .back:hover {
+    background-color: #3f51b5;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .abtext p {
+        font-size: 16px;
+    }
+
+    .skills h1 {
+        font-size: 28px;
+    }
+
+    .skills li {
+        font-size: 16px;
+    }
+
+    .pro h3 {
+        font-size: 22px;
+    }
+
+    .pro p {
+        font-size: 16px;
+    }
+
+    .cotain h1 {
+        font-size: 32px;
+    }
+
+    .Contact .back {
+        padding: 10px 25px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .abtext p {
+        font-size: 14px;
+    }
+
+    .skills h1 {
+        font-size: 24px;
+    }
+
+    .skills li {
+        font-size: 14px;
+    }
+
+    .pro h3 {
+        font-size: 20px;
+    }
+
+    .pro p {
+        font-size: 14px;
+    }
+
+    .cotain h1 {
+        font-size: 28px;
+    }
+
+    .Contact .back {
+        padding: 8px 20px;
+    }
+}
+
+/* Contact Section */
+.one {
+    text-align: center;
+    font-size: 36px;
+    color: #5c6bc0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.Whatsapp, .dial, .dal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.Whatsapp:hover, .dial:hover, .dal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.Whatsapp img, .dial img {
+    width: 70px;
+    height: 65px;
+    border-radius: 2rem;
+    margin-right: 25px;
+}
+
+.Whatsapp p, .dial p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5c6bc0;
+    margin-bottom: 5px;
+}
+
+.Whatsapp span, .dial span {
+    font-size: 18px;
+    gap: 1vmin;
+    color: #b0bec5;
+}
+
+.dal a {
+    text-decoration: none;
+}
+
+.dal .img img {
+    width: 180px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.dal .img img:hover {
+    transform: scale(1.1);
+}
+
+.dal p {
+    font-size: 18px;
+    color: #b0bec5;
+    margin-top: 15px;
+}
+
+/* Hover Effects for Contact Divs */
+.Whatsapp:hover img, .dial:hover img {
+    transform: scale(1.1);
+}
+
+.h {
+    background-color: #11d6e1; /* Green background */
+    color: white;              /* White text */
+    padding: 12px 24px;        /* Padding inside the button */
+    border: none;              /* Remove default border */
+    border-radius: 8px;        /* Rounded corners */
+    font-size: 16px;           /* Font size */
+    cursor: pointer;          /* Pointer on hover */
+    margin: 20px 0;  
+    margin-left: 50%;
+    justify-content: center; 
+    align-items: center;         /* Vertical space between buttons */
+}
+
+/* Button Hover Effects */
+.h:hover {
+    background-color: #1e1646; /* Darker green on hover */
+    transform: scale(1.05);     /* Slightly enlarge the button */
+}
+
+/* Focus effect (when the button is clicked or focused) */
+.h:focus {
+    outline: none;              /* Remove outline */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Box shadow for focus */
+}
+
+/* Button within a link (Anchor tag) */
+a .h {
+    text-decoration: none; /* Remove underline from the link */
+}
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .one {
+        font-size: 28px;
+    }
+
+    .Whatsapp, .dial, .dal {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .Whatsapp img, .dial img, .dal .img img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .Whatsapp p, .dial p, .dal p {
+        font-size: 20px;
+    }
+
+    .Whatsapp span, .dial span {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .one {
+        font-size: 24px;
+    }
+
+    .Whatsapp, .dial, .dal {
+        padding: 10px;
+    }
+
+    .Whatsapp img, .dial img, .dal .img img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 10px;
+    }
+
+    .Whatsapp p, .dial p, .dal p {
+        font-size: 18px;
+    }
+
+    .Whatsapp span, .dial span {
+        font-size: 14px;
+    }
+}
+
